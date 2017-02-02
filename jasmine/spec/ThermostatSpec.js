@@ -8,8 +8,8 @@ describe("Thermostat", function() {
 
 
   describe('#temperature', function(){
-    it('reads the thermostat temperature', function() {
-      expect(thermostat.temperature).toEqual(20);
+    it('starts at 20 degrees', function() {
+      expect(thermostat.getCurrentTemperature()).toEqual(20);
     });
   });
 });
