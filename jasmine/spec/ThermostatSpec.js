@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Thermostat", function() {
 
   var thermostat;
@@ -24,11 +26,12 @@ describe("Thermostat", function() {
     it('lowers the temperature by 1', function() {
       expect(thermostat.cooler(1)).toEqual(19);
     });
-    // it('Raises error if temperature is 10 degrres or less', function(){
-    //
-    //   expect(thermostat.getCurrentTemperature => 10)
-    //
-    // });
+    it('Raises error if temperature is 10 degrres or less', function(){
+      for(var i = 0; i < 11; i++) {
+        thermostat.cooler(1);
+      }
+      expect(thermostat.getCurrentTemperature()).toEqual(10);
+    });
   });
 
 
