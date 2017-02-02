@@ -34,14 +34,17 @@ describe("Thermostat", function() {
     });
   });
 
-
-
-
-
-
-
-
-
-
+  describe('#powerSaving', function() {
+      it('#powerSaving is on by default', function() {
+        expect(thermostat.isPowerSavingModeOn()).toBe(true);
+      });
+  });
 
 });
+      // it('When on max temperature is 25 degrees', function(){
+      //   thermostat.powerSaving();
+      //   for(var i = 0; i < 6; i++) {
+      //   thermostat.hotter(1);
+      //   }
+      //   expect(thermostat.getCurrentTemperature()).toEqual(25);
+      // })
