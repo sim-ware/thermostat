@@ -20,6 +20,12 @@ describe("Thermostat", function() {
     it('raises the temperature by 1', function() {
       expect(thermostat.hotter(1)).toEqual(21);
     });
+    it("it doesn't exceed 25 if PSMode is on", function(){
+      for(var i = 0; i < 6; i++) {
+        thermostat.hotter(1);
+        }
+      expect(thermostat.getCurrentTemperature()).toEqual(25)
+    });
   });
 
   describe('#cooler', function(){

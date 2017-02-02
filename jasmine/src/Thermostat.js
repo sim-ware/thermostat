@@ -14,7 +14,7 @@ Thermostat.prototype.getCurrentTemperature = function(){
 };
 
 Thermostat.prototype.hotter = function(number){
-  return this.temperature += number
+  return (this.isPsmMaxTemp() ? this.temperature : this.temperature += number)
 };
 
 Thermostat.prototype.cooler = function(number){
@@ -31,6 +31,10 @@ Thermostat.prototype.isPowerSavingModeOn = function() {
 
 Thermostat.prototype.switchPowerSavingModeOff = function() {
   return this.powerSavingMode = false;
+};
+
+Thermostat.prototype.isPsmMaxTemp = function(){
+  return this.temperature === this.PSMMAX;
 };
 //
 // Thermostat.prototype.isPsmMax = function() {
