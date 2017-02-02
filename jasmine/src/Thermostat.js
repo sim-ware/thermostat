@@ -6,6 +6,10 @@ Thermostat.prototype.getCurrentTemperature = function(){
   return this.temperature
 };
 
-Thermostat.prototype.hotter = function(){
-  return this.temperature + 1
+Thermostat.prototype.hotter = function(number){
+  return this.temperature += number
+};
+
+Thermostat.prototype.cooler = function(number){
+  return this.temperature -= number
 };
