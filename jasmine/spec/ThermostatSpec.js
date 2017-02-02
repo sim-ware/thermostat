@@ -12,4 +12,11 @@ describe("Thermostat", function() {
       expect(thermostat.getCurrentTemperature()).toEqual(20);
     });
   });
+
+  describe('#hotter', function(){
+    it('raises the temperature by 1', function() {
+      expect(thermostat.hotter()).toEqual(21);
+    });
+  });
+
 });
