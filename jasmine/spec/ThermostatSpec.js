@@ -26,6 +26,13 @@ describe("Thermostat", function() {
         }
       expect(thermostat.getCurrentTemperature()).toEqual(25)
     });
+    it("doesn't exceed 32 when PSMode is off", function(){
+      thermostat.switchPowerSavingModeOff();
+      for(var i = 0; i < 13; i++) {
+        thermostat.hotter(1);
+        }
+      expect(thermostat.getCurrentTemperature()).toEqual(32)
+    });
   });
 
   describe('#cooler', function(){
