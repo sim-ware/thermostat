@@ -57,6 +57,13 @@ describe("Thermostat", function() {
       });
   });
 
+  describe('#reset', function(){
+      it('resets the temp to 20 degrees', function(){
+      thermostat.reset();
+      expect(thermostat.getCurrentTemperature()).toEqual(20);
+      });
+  });
+
 });
       // it('When on max temperature is 25 degrees', function(){
       //   thermostat.powerSaving();

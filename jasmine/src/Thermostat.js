@@ -37,7 +37,8 @@ Thermostat.prototype.switchPowerSavingModeOff = function() {
 Thermostat.prototype.isPsmMaxTemp = function(){
   return this.temperature === this.psmMax;
 };
-//
-// Thermostat.prototype.isPsmMax = function() {
-//   return this.temperature === this.PSMMAX;
-// };
+
+Thermostat.prototype.reset = function(){
+  this.temperature = 20
+  return this.temperature;
+};
