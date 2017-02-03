@@ -55,6 +55,10 @@ describe("Thermostat", function() {
         thermostat.switchPowerSavingModeOff();
         expect(thermostat.isPowerSavingModeOn()).toBe(false);
       });
+      it('can switch PSM on, after being switched off', function(){
+        thermostat.switchPowerSavingModeOn();
+        expect(thermostat.isPowerSavingModeOn()).toBe(true);
+      });
   });
 
   describe('#reset', function(){
