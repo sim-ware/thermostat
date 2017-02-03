@@ -59,16 +59,17 @@ describe("Thermostat", function() {
 
   describe('#reset', function(){
       it('resets the temp to 20 degrees', function(){
+      thermostat.cooler(5)
       thermostat.reset();
       expect(thermostat.getCurrentTemperature()).toEqual(20);
       });
   });
 
+  describe('#usage', function(){
+      it('reports low energy usage if <18', function(){
+        thermostat.cooler(5)
+        expect(thermostat.usage()).toEqual('low-usage')
+      });
+  });
+
 });
-      // it('When on max temperature is 25 degrees', function(){
-      //   thermostat.powerSaving();
-      //   for(var i = 0; i < 6; i++) {
-      //   thermostat.hotter(1);
-      //   }
-      //   expect(thermostat.getCurrentTemperature()).toEqual(25);
-      // })
