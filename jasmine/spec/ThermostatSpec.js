@@ -70,6 +70,14 @@ describe("Thermostat", function() {
         thermostat.cooler(5)
         expect(thermostat.usage()).toEqual('low-usage')
       });
+      it('reports medium energy usage if <25', function(){
+        thermostat.hotter(4)
+        expect(thermostat.usage()).toEqual('medium-usage')
+      });
+      it('reports high energy usage if >25', function(){
+        thermostat.hotter(7)
+        expect(thermostat.usage()).toEqual('high-usage')
+      });
   });
 
 });
